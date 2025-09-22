@@ -27,8 +27,8 @@ export const SignupPage = () => {
       navigate("/auth/login")
 
     } catch (err) {
-      console.log("signup error", err);
-      setError(err.response.data.message)
+      console.log("signup error", err.message);
+      setError(err?.response?.data?.message||err.message)
     } finally {
       setLoading(false);
     }

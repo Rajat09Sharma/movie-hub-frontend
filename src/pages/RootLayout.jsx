@@ -23,7 +23,7 @@ export const RootLayout = () => {
                 dispatch(authAction.setAuthToken({ token: response.data.token, userId: response.data.user_id, role: response.data.role }));
 
             } catch (error) {
-                console.log("home refresh token fetch error", error);
+                console.log("home refresh token fetch error", error.message);
                 dispatch(userLogout());
                 navigate("/auth/login");
             }

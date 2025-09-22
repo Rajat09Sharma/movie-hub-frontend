@@ -30,7 +30,7 @@ export const LoginPage = () => {
             dispatch(authAction.setAuthToken({ token: response.data.token, userId: response.data.user_id, role: response.data.role }));
             navigate("/");
         } catch (err) {
-            console.log("login error", err);
+            console.log("login error", err.message);
             setError(err?.response?.data?.message || err.message);
 
         } finally {
